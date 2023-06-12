@@ -27,8 +27,8 @@ const Formulario = ({setMonedas}) => {
 
 
   const [ criptos, setCriptos ] = useState([]);
-  const [ moneda, SelectMonedas ] = useSelectMonedas("Elige tu moneda", monedas);
-  const [ criptomoneda, SelectCriptomoneda ] = useSelectMonedas("Elige tu criptomoneda", criptos);
+  const [ moneda, SelectMonedas ] = useSelectMonedas("Choose your currency", monedas);
+  const [ criptomoneda, SelectCriptomoneda ] = useSelectMonedas("Choose your crypto", criptos);
   const [ error, setError ] = useState(false);
 
   useEffect(() => {
@@ -64,11 +64,11 @@ const Formulario = ({setMonedas}) => {
 
   return (
     <>
-      {error && <Error>Todos los campos son obligatorios</Error>}
+      {error && <Error>All fields are required</Error>}
       <form onSubmit={handleSubmit}>
           <SelectMonedas/>
           <SelectCriptomoneda/>
-          <InputSubmit type="submit" value="cotizar"/>
+          <InputSubmit type="submit" value="Consult"/>
       </form>
     </>
   )

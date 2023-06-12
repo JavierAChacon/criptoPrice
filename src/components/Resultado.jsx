@@ -33,11 +33,11 @@ const Resultado = ({resultado}) => {
     return (
         <Contenedor>
             <div>
-                <Precio>El Precio es de: <span>{PRICE}</span></Precio>
-                <Texto>Precio más alto del día: <span>{HIGHDAY}</span></Texto>
-                <Texto>Precio más bajo del día: <span>{LOWDAY}</span></Texto>
-                <Texto>Variación últimas 24 horas: <span>{CHANGEPCT24HOUR}</span></Texto>
-                <Texto>Última Actualización: <span>{LASTUPDATE}</span></Texto>
+                <Precio>The price is: <span>{PRICE}</span></Precio>
+                <Texto>Highest price of the day: <span>{HIGHDAY}</span></Texto>
+                <Texto>Lowest price of the day: <span>{LOWDAY}</span></Texto>
+                <Texto>% Variation last 24 hours: <span>{CHANGEPCT24HOUR}</span></Texto>
+                <Texto>Last update: <span>{LASTUPDATE}</span></Texto>
             </div>
         </Contenedor>
     );

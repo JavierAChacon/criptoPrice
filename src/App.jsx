@@ -54,13 +54,13 @@ function App() {
       setResultado({});
       const cotizarCripto = async() => {
         const {moneda, criptomoneda} = monedas;
-        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${moneda}&tsyms=${criptomoneda}`;
+        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
 
         const respuesta = await fetch(url);
         const resultado =  await respuesta.json();
 
         
-        setResultado(resultado.DISPLAY[moneda][criptomoneda]);
+        setResultado(resultado.DISPLAY[criptomoneda][moneda]);
         setCargando(false);
       }
       cotizarCripto();
@@ -71,7 +71,7 @@ function App() {
     <Contenedor>
       <Imagen src={ImagenCripto} alt="imagenes cripto"></Imagen>
       <div>
-         <Heading>Cotiza criptomonedas al instante</Heading>
+         <Heading>Instant cryptocurrency consultation</Heading>
          <Formulario setMonedas={setMonedas}/>
          {cargando && <Spinner/>}
          {resultado.PRICE && <Resultado resultado={resultado}/>}
